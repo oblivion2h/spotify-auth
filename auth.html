@@ -45,12 +45,12 @@
             error: params.get('error')
         };
 
-        // 严格验证来源
+        // 回传给抖音直播页
         if (window.opener && !window.opener.closed) {
-            window.opener.postMessage(message, 'https://live.bilibili.com');
+            window.opener.postMessage(message, 'https://live.douyin.com');
         }
         
-        // 安全关闭窗口
+        // 延迟关闭，确保消息发出
         setTimeout(() => {
             window.close();
         }, 1000);
